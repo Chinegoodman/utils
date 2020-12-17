@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-DEMO</title>
+    <style>
+         :root {
+            --bgcolor: #000;
+            --libgcolor: #fff;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0 auto;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: var(--bgcolor);
+        }
+        
+        .list {
+            margin: 0 auto;
+            width: 90%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        
+        .list>div {
+            width: 40%;
+            height: 300px;
+            background-color: var(--libgcolor);
+        }
+        /* 阴影css */
+        
+        .boxshadow {
+            box-shadow: 0 0 50px 100px red inset;
+            /* box-shadow: 0 0 1000px 100px red inset; */
+        }
+        
+        .boxshadow1 {
+            box-shadow: 0 0 50px 100px red;
+            /* box-shadow: 0 0 1000px 100px red; */
+        }
+        /* placeholder-shown */
+        
+        .placeholdershown p {
+            color: orange;
+        }
+        
+        .placeholdershown_input:not(:placeholder-shown)~p {
+            color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <div class="boxshadow"></div>
+        <div class="boxshadow1"></div>
+        <div class="placeholdershown">
+            <input class="placeholdershown_input" type="text" placeholder="输入规定的内容吧！">
+            <p>ccccc</p>
+        </div>
+    </div>
+</body>
+
+</html>
