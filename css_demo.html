@@ -49,8 +49,47 @@
         }
         /* placeholder-shown */
         
-        .placeholdershown p {
-            color: orange;
+        .placeholdershown {
+            position: relative;
+        }
+        
+        .placeholdershown_inputbox {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 50px;
+            background-color: #ccc;
+        }
+        
+        .placeholdershown_input {
+            display: block;
+            margin: 0 auto;
+            outline: none;
+            border: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+        
+        .placeholdershown_inputbox p {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            touch-action: none;
+            pointer-events: none;
+            width: 100%;
+        }
+        
+        .placeholdershown_input:focus~p {
+            color: rebeccapurple;
+            top: 0;
+            transform: translate(-50%, 0%);
         }
         
         .placeholdershown_input:not(:placeholder-shown)~p {
@@ -64,8 +103,10 @@
         <div class="boxshadow"></div>
         <div class="boxshadow1"></div>
         <div class="placeholdershown">
-            <input class="placeholdershown_input" type="text" placeholder="输入规定的内容吧！">
-            <p>ccccc</p>
+            <div class="placeholdershown_inputbox">
+                <input class="placeholdershown_input" type="text" placeholder="">
+                <p>输入规定的内容！</p>
+            </div>
         </div>
     </div>
 </body>
